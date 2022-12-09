@@ -1,0 +1,23 @@
+[Added Associations]
+inode/symlink=pcmanfm-qt.desktop;
+text/html=librewolf.desktop;
+x-scheme-handler/http=librewolf.desktop;
+x-scheme-handler/https=librewolf.desktop;
+x-scheme-handler/about=librewolf.desktop;
+x-scheme-handler/unknown=librewolf.desktop;
+text/csv=leafpad.desktop;
+text/plain=leafpad.desktop;
+inode/directory=pcmanfm-qt.desktop;
+audio/mpeg=mpv.desktop;
+image/jpeg=lximage-qt.desktop;
+image/png=lximage-qt.desktop;
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+image/gif=lximage-qt.desktop;
+application/json=nvim.desktop;
+text/x-lua=nvim.desktop;
+
+[Default Applications]
+image/png=lximage-qt.desktop
+image/jpeg=lximage-qt.desktop
+image/jpg=lximage-qt.desktop
+audio/mpeg=mpv.desktop;

@@ -12,12 +12,13 @@ audio/mpeg=mpv.desktop;
 image/jpeg=lximage-qt.desktop;
 image/png=lximage-qt.desktop;
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
-image/gif=lximage-qt.desktop;
 application/json=nvim.desktop;
 text/x-lua=nvim.desktop;
 
 [Default Applications]
-image/png=lximage-qt.desktop
-image/jpeg=lximage-qt.desktop
-image/jpg=lximage-qt.desktop
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+image/png=lximage-qt.desktop;
+image/jpeg=lximage-qt.desktop;
+image/jpg=lximage-qt.desktop;
+image/gif=lximage-qt.desktop;
 audio/mpeg=mpv.desktop;

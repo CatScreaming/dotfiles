@@ -1,3 +1,5 @@
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 --System
 vim.opt.backup=false
 vim.opt.writebackup=false

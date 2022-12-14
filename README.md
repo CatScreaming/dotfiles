@@ -6,7 +6,7 @@
 git init --bare $HOME/.dotfiles
 alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dot remote add origin git@github.com:CatScreaming/dotfiles.git
-dotfiles config status.showUntrackedFiles no
+dot config status.showUntrackedFiles no
 ```
 
 ### Replication
@@ -18,10 +18,10 @@ rm --recursive dotfiles-tmp
 
 ### Usage
 ```sh
-dotfiles status
-dotfiles add .gitconfig
-dotfiles commit -m 'Add gitconfig'
-dotfiles push
+dot status
+dot add .gitconfig
+dot commit -m 'Add gitconfig'
+dot push
 ```
 
 ## Fonts

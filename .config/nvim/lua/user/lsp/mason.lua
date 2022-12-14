@@ -1,5 +1,6 @@
 local servers = {
-	"sumneko_lua"
+	"sumneko_lua",
+	"texlab"
 }
 
 require("mason").setup({})

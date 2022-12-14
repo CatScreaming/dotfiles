@@ -36,14 +36,8 @@ return packer.startup(function(use)
 	use { "williamboman/mason-lspconfig.nvim", commit = "0051870dd728f4988110a1b2d47f4a4510213e31" }
 
 	use {"nvim-treesitter/nvim-treesitter",  run = ":TSUpdate" }
-
-
 	use {"nvim-tree/nvim-tree.lua", requires = {"nvim-tree/nvim-web-devicons"}}
 
-	use {"folke/tokyonight.nvim"}
-
-
-	
 	if PACKER_BOOTSTRAP then require("packer").sync() end
 end)
 

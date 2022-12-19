@@ -3,5 +3,6 @@ set cleaner ~/.config/lf/lf_kitty_clean
 
 map . set hidden!
 map x $gio trash "$fx"
+map X $rm "$fx"
 map b1 cd /home/toffee/
 map b2 cd /run/media/toffee/VAULT/

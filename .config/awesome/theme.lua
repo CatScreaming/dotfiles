@@ -11,7 +11,7 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "sans 8"
+theme.font          = "FiraCodeNerdFontMono 12"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
@@ -24,11 +24,12 @@ theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
-theme.useless_gap   = dpi(0)
-theme.border_width  = dpi(1)
+theme.useless_gap   = dpi(5)
+theme.border_width  = dpi(0)
 theme.border_normal = "#000000"
 theme.border_focus  = "#535d6c"
 theme.border_marked = "#91231c"
+
 
 -- There are other variable sets
 -- overriding the default one when
@@ -98,7 +99,8 @@ theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/m
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
 --TODO: Randomly select one wallpaper and set it
-theme.wallpaper = "~/.local/share/refuge.png" 
+theme.wallpaper = "~/.local/share/refuge.png"
+
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"

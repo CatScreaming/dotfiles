@@ -4,21 +4,18 @@ local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
 -- Widget and layout library
-local wibox = require("wibox")
+local wibox = require("wibox/init")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
 -- local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
--- Enable hotkeys help widget for VIM and other apps
--- when client with a matching name is opened:
-require("awful.hotkeys_popup.keys")
+
+require("main.error-handling")
 
 RC = {}
 RC.vars = {}
-
-require("main.error-handling")
 
 beautiful.init("~/.config/awesome/theme.lua")
 
@@ -265,8 +262,8 @@ globalkeys = gears.table.join(
               {description = "select previous", group = "layout"}),
 
 	-- General shortcuts
-	awful.key({}, "XF86AudioRaiseVolume", function() awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +1000") end),
-	awful.key({}, "XF86AudioLowerVolume", function() awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -1000") end),
+	--awful.key({}, "XF86AudioRaiseVolume", function() awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +1000") end),
+	--awful.key({}, "XF86AudioLowerVolume", function() awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -1000") end),
 	awful.key({}, "XF86AudioMute", function() awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") end),
 	awful.key({}, "XF86AudioMicMute", function() awful.spawn("pactl set-sink-mute @DEFAULT_SOURCE@ toggle") end),
 
@@ -386,19 +383,8 @@ for i = 1, 9 do
                           end
                      end
                   end,
-                  {description = "move focused client to tag #"..i, group = "tag"}),
-        -- Toggle tag on focused client.
-        awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
-                  function ()
-                      if client.focus then
-                          local tag = client.focus.screen.tags[i]
-                          if tag then
-                              client.focus:toggle_tag(tag)
-                          end
-                      end
-                  end,
-                  {description = "toggle focused client on tag #" .. i, group = "tag"})
-    )
+                  {description = "move focused client to tag #"..i, group = "tag"})
+	)
 end
 
 clientbuttons = gears.table.join(
@@ -421,6 +407,7 @@ root.keys(globalkeys)
 
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
+
 awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
@@ -438,7 +425,6 @@ awful.rules.rules = {
     -- Floating clients.
     { rule_any = {
         instance = {
-          "DTA",  -- Firefox addon DownThemAll.
           "copyq",  -- Includes session name in class.
           "pinentry",
         },
@@ -470,10 +456,6 @@ awful.rules.rules = {
     { rule_any = {type = { "normal", "dialog" }
       }, properties = { titlebars_enabled = true }
     },
-
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
 }
 -- }}}
 
@@ -492,33 +474,23 @@ client.connect_signal("manage", function (c)
     end
 end)
 
+
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal("request::titlebars", function(c)
-    -- buttons for the titlebar
-    local buttons = gears.table.join(
-        awful.button({ }, 1, function()
-            c:emit_signal("request::activate", "titlebar", {raise = true})
-            awful.mouse.client.move(c)
-        end),
-        awful.button({ }, 3, function()
-            c:emit_signal("request::activate", "titlebar", {raise = true})
-            awful.mouse.client.resize(c)
-        end)
-    )
-
-    awful.titlebar(c) : setup {
+    return awful.titlebar(c, {
+		size = 20,
+		}) : setup {
         { -- Left
             awful.titlebar.widget.iconwidget(c),
-            buttons = buttons,
             layout  = wibox.layout.fixed.horizontal
         },
         { -- Middle
-            { -- Title
+            {
+                widget = awful.titlebar.widget.titlewidget(c),
                 align  = "center",
-                widget = awful.titlebar.widget.titlewidget(c)
+				font = "FiraCodeNerdFontMono 8"
             },
-            buttons = buttons,
-            layout  = wibox.layout.flex.horizontal
+            layout = wibox.layout.flex.horizontal
         },
         { -- Right
             awful.titlebar.widget.floatingbutton (c),
@@ -526,7 +498,7 @@ client.connect_signal("request::titlebars", function(c)
             awful.titlebar.widget.stickybutton   (c),
             awful.titlebar.widget.ontopbutton    (c),
             awful.titlebar.widget.closebutton    (c),
-            layout = wibox.layout.fixed.horizontal()
+            layout = wibox.layout.fixed.horizontal
         },
         layout = wibox.layout.align.horizontal
     }
@@ -539,4 +511,18 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
--- }}}
+-- }}
+--
+--
+---- Toggle tag on focused client.
+--      awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
+--              function ()
+--                      if client.focus then
+--                         local tag = client.focus.screen.tags[i]
+--                          if tag then
+--                              client.focus:toggle_tag(tag)
+--                          end
+--                      end
+--                 end,
+--                 {description = "toggle focused client on tag #" .. i, group = "tag"})
+

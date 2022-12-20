@@ -1,25 +1,22 @@
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
+local beautiful = require("beautiful")
 
-local M = {}
+local editor = os.getenv("EDITOR") or "nvim"
+local editor_cmd = RC.vars.terminal .. " -e " .. editor
 
-M.myawesomemenu = {
-   { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
-   { "restart", awesome.restart },
-   { "quit", function() awesome.quit() end },
+local awesomeMenu = {
+	{ "Hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
+	{ "Edit config", editor_cmd .. " " .. awesome.conffile },
+	{ "Reload config", awesome.restart },
+	{ "Quit", function() awesome.quit() end },
 }
 
-M.mymainmenu = awful.menu({ items = { { "awesome", M.myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
-                                  }
-                        })
 
-M.mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
-                                     menu = M.mymainmenu })
+local _M = {
+	{ "Awesome", awesomeMenu, beautiful.awesome_icon },
+	{ "Terminal", RC.vars.terminal }
+}
 
--- Menubar configuration
-M.menubar.utils.terminal = terminal -- Set the terminal for applications that require it
-
-return M
+return _M
 

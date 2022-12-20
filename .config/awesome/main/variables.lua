@@ -1,7 +1,7 @@
-local M = {
+local _M = {
+	modkey = "Mod4",
 	terminal = "kitty",
-	modkey = "Mod4"
 }
 
-return M
+return _M
 

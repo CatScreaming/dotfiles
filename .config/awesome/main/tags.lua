@@ -1,9 +1,11 @@
 local awful = require("awful")
 
-local tags = {}
-awful.screen.connect_for_each_screen(function (s)
-	tags[s] = awful.tag({ "Τόφι", "Σ", "λ", "π", "ψ", "μ", "α", "β", "γ" }, s, {awful.layout.layouts[2]})
-end)
+local _M = {}
+_M.loadTags = function ()
+	awful.screen.connect_for_each_screen(function (s)
+		awful.tag({ "Τόφι", "Σ", "λ", "π", "ψ", "μ", "α", "β", "γ" }, s, {awful.layout.suit.tile})
+	end)
+end
 
-return tags
+return _M
 

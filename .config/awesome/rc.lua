@@ -28,6 +28,9 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 menubar.utils.terminal = RC.vars.terminal -- Set the terminal for applications that require it
 -- }}}
 
+-- Autostart
+awful.spawn("picom -b")
+
 -- {{{ Wibar
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -70,14 +73,13 @@ local tasklist_buttons = gears.table.join(
                                           end))
 
 local function set_wallpaper(s)
-    if beautiful.wallpaper then
-        local wallpaper = beautiful.wallpaper
-        -- If wallpaper is a function, call it with the screen
-        if type(wallpaper) == "function" then
-            wallpaper = wallpaper(s)
+	if beautiful.wallpaper then
+		local wallpaper = beautiful.wallpaper
+		if type(wallpaper) == "function" then
+			wallpaper = wallpaper()
         end
-        gears.wallpaper.maximized(wallpaper, s, true)
-    end
+		gears.wallpaper.maximized(wallpaper, s, true)
+	end
 end
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)

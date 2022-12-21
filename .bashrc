@@ -6,7 +6,7 @@
 PS1="\[$(printf '\e[0;35m')\][\@] \[$(printf '\e[0;35m')\]\u\[$(printf '\e[0m')\] \[$(printf '\e[0;33m')\]\w \[$(printf '\e[0;36m')\]\$ \[$(printf '\e[0m')\]"
 
 alias got='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ls='ls --color=auto'
+alias ls='ls -a --color=auto'
 
 bind 'set bell-style none'
 bind 'set show-all-if-ambiguous on'
@@ -30,3 +30,18 @@ if [ -f "$HOME/.dotfiles/.bash-git-prompt/gitprompt.sh" ]; then
 	source $HOME/.dotfiles/.bash-git-prompt/gitprompt.sh
 fi
 
+enres()
+{
+	cd ~/.dotfiles/
+	tar czf res.tar.gz res/
+	gpg -c res.tar.gz
+	rm res.tar.gz
+}
+
+deres()
+{
+	cd ~/.dotfiles/
+	gpg -do res.tar.gz res.tar.gz.gpg
+	tar xvf res.tar.gz
+	rm res.tar.gz
+}

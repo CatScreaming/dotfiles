@@ -2,19 +2,18 @@ return {
 	settings = {
 		Lua = {
 			completion = {
-				enable = true
+				enable = true,
 			},
 			diagnostics = {
 				globals = { "vim", "awesome", "client", "root", "screen", "RC" },
 			},
 			workspace = {
 				library = {
-					--[vim.fn.expand "$VIMRUNTIME/lua"] = true,
-					--[vim.fn.stdpath "config" .. "/lua"] = true,
 					["/usr/share/nvim/runtime/lua"] = true,
 					["/usr/share/awesome/lib"] = true,
-					["/usr/share/awesome/lib/wibox/widget/"] = true,
+					["~/.local/share/nvim/site/pack/packer/start/"] = true,
 				},
+				checkThirdParty = false,
 			},
 			telemetry = {
 				enable = false,

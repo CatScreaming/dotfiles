@@ -3,11 +3,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Set custom prompt
 PS1="\[$(printf '\e[0;35m')\][\@] \[$(printf '\e[0;35m')\]\u\[$(printf '\e[0m')\] \[$(printf '\e[0;33m')\]\w \[$(printf '\e[0;36m')\]\$ \[$(printf '\e[0m')\]"
 
-alias got='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ls='ls -a --color=auto'
-
+# Better bash 
 bind 'set bell-style none'
 bind 'set show-all-if-ambiguous on'
 bind 'set colored-completion-prefix on'
@@ -22,8 +21,12 @@ shopt -s autocd
 shopt -s dirspell direxpand
 shopt -s cdspell
 
-source /usr/share/git/completion/git-completion.bash
+# Alias setup
+alias got='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias ls='ls -a --color=auto'
 
+# Git shell setup
+source /usr/share/git/completion/git-completion.bash 2> /dev/null
 if [ -f "$HOME/.dotfiles/.bash-git-prompt/gitprompt.sh" ]; then
 	GIT_PROMPT_ONLY_IN_REPO=1
 	GIT_PROMPT_FETCH_REMOTE_STATUS=0

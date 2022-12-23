@@ -102,7 +102,7 @@ theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/m
 
 -- In the future awesome can randomly select an image. For now all options must be set manually.
 theme.wallpaper = function ()
-    local images = { "bg.png", "celeste1.jpg", "celeste2.jpg" }
+    local images = { "bg.png" }
     return home_dir .. "/.dotfiles/res/images/" .. images[math.random(#images)]
 end
 

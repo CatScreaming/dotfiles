@@ -1,4 +1,3 @@
-local _M = {}
 local k = vim.keymap.set
 local opts = { silent = true }
 
@@ -26,6 +25,16 @@ k("n", "<S-q>", "<cmd>bdelete!<CR>", opts)
 k("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 -- Better paste
 k("v", "p", '"_dP', opts)
+-- Spawn IDE-like Terminal at the bottom
+k("n", "<leader>t", function ()
+	local os_name = vim.loop.os_uname().sysname
+	if os_name == "Linux" then
+		vim.cmd("silent ! kitty @ --to=$KITTY_LISTEN_ON launch --type window --cwd $PWD")
+		vim.cmd("silent ! kitty @ --to=$KITTY_LISTEN_ON resize-window -a vertical -i -16")
+	elseif os_name == "Windows" then
+		print("TODO")
+	end
+end, opts)
 
 -- Visual Mode --
 -- Indenting mode

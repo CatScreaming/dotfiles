@@ -1,9 +1,3 @@
-local servers = {
-	"bashls",
-	"sumneko_lua",
-	"texlab",
-}
-
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
 local mason_status, mason = pcall(require, "mason")
 if not lspconfig_status or not mason_status then
@@ -11,7 +5,9 @@ if not lspconfig_status or not mason_status then
 end
 
 mason.setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+	ensure_installed = LANGUAGES.servers
+})
 
 local handlers = require("user.lsp.handlers")
 if handlers == nil then
@@ -20,13 +16,12 @@ end
 handlers.setup()
 
 local opts = {}
-for _, server in pairs(servers) do
+for _, server in pairs(LANGUAGES.servers) do
 	opts = {
 		on_attach = handlers.on_attach,
 		capabilities = handlers.capabilities,
 	}
-
-	server = vim.split(server, "@")[1]
+	-- value[1] = vim.split(value[1], "@")[1]
 
 	local status_settings, conf_opts = pcall(require, "user.lsp.settings." .. server)
 	if status_settings then

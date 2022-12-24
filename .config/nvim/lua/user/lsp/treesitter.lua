@@ -4,12 +4,11 @@ if not treesitter_configs_status then
 end
 
 configs.setup({
+	ensure_installed = LANGUAGES.treesitter,
 	sync_install = false,
-
 	highlight = {
 		enable = true,
 	},
-
 	indent = {
 		enable = true,
 	},

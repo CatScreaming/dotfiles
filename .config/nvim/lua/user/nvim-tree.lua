@@ -5,6 +5,6 @@ end
 
 nvim_tree.setup({
 	diagnostics = {
-		enable = true
-	}
+		enable = true,
+	},
 })

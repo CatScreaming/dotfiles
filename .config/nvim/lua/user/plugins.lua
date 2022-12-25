@@ -45,4 +45,5 @@ return packer.startup(function(use)
 	-- Explorer and bufferline
 	use({ "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" } })
 	use({ "akinsho/bufferline.nvim", requires = { "nvim-tree/nvim-web-devicons" } })
+	use({ 'feline-nvim/feline.nvim' })
 end)

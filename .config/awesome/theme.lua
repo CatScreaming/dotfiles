@@ -11,8 +11,8 @@ local theme = {}
 
 theme.font = "FiraCodeNerdFontMono 12"
 
-theme.bg_normal = "#222222"
-theme.bg_focus = "#535d6c"
+theme.bg_normal = "#00000099"
+theme.bg_focus = "#535d6c99"
 theme.bg_urgent = "#ff0000"
 theme.bg_minimize = "#444444"
 theme.bg_systray = theme.bg_normal
@@ -93,7 +93,7 @@ theme.titlebar_maximized_button_focus_active = themes_path .. "default/titlebar/
 
 -- In the future awesome can randomly select an image. For now all options must be set manually.
 theme.wallpaper = function()
-	local images = { "bg.png" }
+	local images = { "miablue.jpg", "miachars.jpg", "miagreen.jpg", "mianana.png", "miaturquoise.jpg", "osrefuge.png" }
 	return home_dir .. "/.dotfiles/res/images/" .. images[math.random(#images)]
 end
 

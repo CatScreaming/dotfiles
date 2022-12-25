@@ -4,7 +4,33 @@ local gears = require("gears")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
-return gears.table.join(
+local home = os.getenv("HOME")
+
+local globalkeys = gears.table.join(
+	-- General Shortcuts
+	awful.key({}, "Print", function()
+		awful.spawn(home .. "/.dotfiles/screenshot.sh")
+	end),
+	awful.key({}, "XF86AudioMute", function()
+		awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")
+	end),
+	awful.key({}, "XF86AudioMicMute", function()
+		awful.spawn("pactl set-sink-mute @DEFAULT_SOURCE@ toggle")
+	end),
+	awful.key({}, "XF86AudioPlay", function()
+		awful.spawn("mocp -G")
+	end),
+	awful.key({}, "XF86AudioStop", function()
+		awful.spawn("mocp -s")
+	end),
+	awful.key({}, "XF86AudioPrev", function()
+		awful.spawn("mocp -r")
+	end),
+	awful.key({}, "XF86AudioNext", function()
+		awful.spawn("mocp -f")
+	end),
+
+	-- Awesome
 	awful.key({ RC.vars.modkey }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
 	awful.key({ RC.vars.modkey }, "Left", awful.tag.viewprev, { description = "view previous", group = "tag" }),
 	awful.key({ RC.vars.modkey }, "Right", awful.tag.viewnext, { description = "view next", group = "tag" }),
@@ -46,7 +72,6 @@ return gears.table.join(
 		end
 	end, { description = "go back", group = "client" }),
 
-	-- Standard program
 	awful.key({ RC.vars.modkey }, "p", function()
 		awful.spawn("rofi -show drun")
 	end, { description = "launch rofi", group = "launcher" }),
@@ -86,28 +111,6 @@ return gears.table.join(
 		awful.layout.inc(-1)
 	end, { description = "select previous", group = "layout" }),
 
-	-- General shortcuts
-	awful.key({}, "XF86AudioMute", function()
-		awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")
-	end),
-	awful.key({}, "XF86AudioMicMute", function()
-		awful.spawn("pactl set-sink-mute @DEFAULT_SOURCE@ toggle")
-	end),
-
-	-- Music player
-	awful.key({}, "XF86AudioPlay", function()
-		awful.spawn("mocp -G")
-	end),
-	awful.key({}, "XF86AudioStop", function()
-		awful.spawn("mocp -s")
-	end),
-	awful.key({}, "XF86AudioPrev", function()
-		awful.spawn("mocp -r")
-	end),
-	awful.key({}, "XF86AudioNext", function()
-		awful.spawn("mocp -f")
-	end),
-
 	awful.key({ RC.vars.modkey, "Control" }, "n", function()
 		local c = awful.client.restore()
 		-- Focus restored client
@@ -135,3 +138,37 @@ return gears.table.join(
 		menubar.show()
 	end, { description = "show the menubar", group = "launcher" })
 )
+
+-- Bind all key numbers to tags.
+for i = 1, 9 do
+	globalkeys = gears.table.join(
+		globalkeys,
+		-- View tag only.
+		awful.key({ RC.vars.modkey }, "#" .. i + 9, function()
+			local screen = awful.screen.focused()
+			local tag = screen.tags[i]
+			if tag then
+				tag:view_only()
+			end
+		end, { description = "view tag #" .. i, group = "tag" }),
+		-- Toggle tag display.
+		awful.key({ RC.vars.modkey, "Control" }, "#" .. i + 9, function()
+			local screen = awful.screen.focused()
+			local tag = screen.tags[i]
+			if tag then
+				awful.tag.viewtoggle(tag)
+			end
+		end, { description = "toggle tag #" .. i, group = "tag" }),
+		-- Move client to tag.
+		awful.key({ RC.vars.modkey, "Shift" }, "#" .. i + 9, function()
+			if client.focus then
+				local tag = client.focus.screen.tags[i]
+				if tag then
+					client.focus:move_to_tag(tag)
+				end
+			end
+		end, { description = "move focused client to tag #" .. i, group = "tag" })
+	)
+end
+
+return globalkeys

@@ -5,7 +5,7 @@ return {
 				enable = true,
 			},
 			diagnostics = {
-				globals = { "vim", "awesome", "client", "root", "screen", "RC" },
+				globals = { "vim", "awesome", "client", "root", "screen" },
 			},
 			workspace = {
 				library = {

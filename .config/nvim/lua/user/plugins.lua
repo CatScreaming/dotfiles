@@ -25,20 +25,24 @@ return packer.startup(function(use)
 	use({ "nvim-lua/plenary.nvim" })
 
 	-- Completion
+	use({ "L3MON4D3/LuaSnip" })
 	use({ "hrsh7th/nvim-cmp" })
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "hrsh7th/cmp-buffer" })
 	use({ "hrsh7th/cmp-path" })
-	use({ "L3MON4D3/LuaSnip" })
 
 	-- LSP
 	use({ "neovim/nvim-lspconfig" })
 	use({ "williamboman/mason.nvim" })
 	use({ "williamboman/mason-lspconfig.nvim" })
+	-- Java LSP
+	use({ "mfussenegger/nvim-jdtls" })
 
 	-- Highlighting, formatting and linting
 	use({ "nvim-treesitter/nvim-treesitter" })
 	use({ "jose-elias-alvarez/null-ls.nvim" })
 
+	-- Explorer and bufferline
 	use({ "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" } })
+	use({ "akinsho/bufferline.nvim", requires = { "nvim-tree/nvim-web-devicons" } })
 end)

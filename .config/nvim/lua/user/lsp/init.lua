@@ -1,16 +1,17 @@
 LANGUAGES = {}
--- LSP Servers to be installed - Check :Mason
+-- LSP Servers to be setup by lspconfig - Check :Mason
 LANGUAGES.servers = {
 	--"bashls",
-	--"sumneko_lua",
-	--"texlab",
+	"sumneko_lua",
+	"texlab",
 }
 -- Treesitter languages to be installed - Check :TSInstallInfo
 -- FOR WINDOWS: Run nvim once in VS Dev Console after updating
 LANGUAGES.treesitter = {
-	--"bash",
-	--"lua",
-	--"markdown",
+	"bash",
+	"java",
+	"lua",
+	"markdown",
 }
 
 require("user.lsp.treesitter")

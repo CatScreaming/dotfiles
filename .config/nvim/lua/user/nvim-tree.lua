@@ -3,4 +3,8 @@ if not ntree_status then
 	return
 end
 
-nvim_tree.setup()
+nvim_tree.setup({
+	diagnostics = {
+		enable = true
+	}
+})

@@ -6,7 +6,7 @@ end
 
 mason.setup()
 require("mason-lspconfig").setup({
-	ensure_installed = LANGUAGES.servers
+	ensure_installed = LANGUAGES.servers,
 })
 
 local handlers = require("user.lsp.handlers")
@@ -21,11 +21,12 @@ for _, server in pairs(LANGUAGES.servers) do
 		on_attach = handlers.on_attach,
 		capabilities = handlers.capabilities,
 	}
-	-- value[1] = vim.split(value[1], "@")[1]
 
 	local status_settings, conf_opts = pcall(require, "user.lsp.settings." .. server)
 	if status_settings then
 		opts = vim.tbl_deep_extend("force", conf_opts, opts)
 	end
+
 	lspconfig[server].setup(opts)
+	::continue::
 end

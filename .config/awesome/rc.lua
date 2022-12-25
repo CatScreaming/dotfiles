@@ -191,7 +191,7 @@ globalkeys = gears.table.join(
 	end, { description = "go back", group = "client" }),
 
 	-- Standard program
-	awful.key({ RC.vars.modkey }, "d", function()
+	awful.key({ RC.vars.modkey }, "p", function()
 		awful.spawn("rofi -show drun")
 	end, { description = "launch rofi", group = "launcher" }),
 	awful.key({ RC.vars.modkey }, "Return", function()
@@ -275,7 +275,7 @@ globalkeys = gears.table.join(
 	end, { description = "lua execute prompt", group = "awesome" }),
 
 	-- Menubar
-	awful.key({ RC.vars.modkey }, "p", function()
+	awful.key({ RC.vars.modkey }, "d", function()
 		menubar.show()
 	end, { description = "show the menubar", group = "launcher" })
 )
@@ -410,10 +410,10 @@ client.connect_signal("request::titlebars", function(c)
 			},
 			{ -- Right
 				awful.titlebar.widget.floatingbutton(c),
-				awful.titlebar.widget.maximizedbutton(c),
+				--awful.titlebar.widget.maximizedbutton(c),
 				awful.titlebar.widget.stickybutton(c),
 				awful.titlebar.widget.ontopbutton(c),
-				awful.titlebar.widget.closebutton(c),
+				--awful.titlebar.widget.closebutton(c),
 				layout = wibox.layout.fixed.horizontal,
 			},
 			layout = wibox.layout.align.horizontal,

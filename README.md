@@ -1,5 +1,5 @@
 # Dotfiles 
-My dotfiles for all the programs I use - partly compatible with Microsoft Windows as well.
+My dotfiles for all the programs I use - partly compatible with Microsoft Windows as well.\
 You probably don't want to use these, but rather create your own dotfiles. However, feel free to take them as a reference!
 
 I try to keep the programs and configs I use as lightweight as possible while trying to avoid heavy dependencies.

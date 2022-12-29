@@ -4,6 +4,6 @@ set icons true
 
 map . set hidden!
 map x $gio trash "$fx"
-map X $rm "$fx"
+map X $rm -r "$fx"
 map b1 cd /home/toffee/
 map b2 cd /run/media/toffee/VAULT/

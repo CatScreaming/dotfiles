@@ -4,7 +4,11 @@ if not lspconfig_status or not mason_status then
 	return print("ERR: lspconfig/mason failed to load")
 end
 
-mason.setup()
+mason.setup({
+	ui = {
+		border = "double",
+	},
+})
 require("mason-lspconfig").setup({
 	ensure_installed = LANGUAGES.servers,
 })
@@ -28,5 +32,4 @@ for _, server in pairs(LANGUAGES.servers) do
 	end
 
 	lspconfig[server].setup(opts)
-	::continue::
 end

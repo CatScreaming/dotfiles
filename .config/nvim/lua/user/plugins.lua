@@ -24,6 +24,9 @@ return packer.startup(function(use)
 	use({ "wbthomason/packer.nvim" })
 	use({ "nvim-lua/plenary.nvim" })
 
+	-- Colorscheme
+	use({ "catppuccin/nvim", as = "catppuccin" })
+
 	-- Completion
 	use({ "L3MON4D3/LuaSnip" })
 	use({ "hrsh7th/nvim-cmp" })
@@ -45,5 +48,5 @@ return packer.startup(function(use)
 	-- Explorer and bufferline
 	use({ "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" } })
 	use({ "akinsho/bufferline.nvim", requires = { "nvim-tree/nvim-web-devicons" } })
-	use({ 'feline-nvim/feline.nvim' })
+	use({ "feline-nvim/feline.nvim" })
 end)

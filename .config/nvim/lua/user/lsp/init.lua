@@ -1,7 +1,7 @@
 LANGUAGES = {}
 -- LSP Servers to be setup by lspconfig - Check :Mason
 LANGUAGES.servers = {
-	--"bashls",
+	"bashls",
 	"sumneko_lua",
 	"texlab",
 }

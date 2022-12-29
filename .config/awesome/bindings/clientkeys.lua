@@ -1,6 +1,5 @@
 local gears = require("gears")
 local awful = require("awful")
-
 local binding = {}
 
 binding.buttons = gears.table.join(

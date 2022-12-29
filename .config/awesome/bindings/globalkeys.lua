@@ -1,13 +1,12 @@
 local awful = require("awful")
 local gears = require("gears")
-
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
 local home = os.getenv("HOME")
 
 local globalkeys = gears.table.join(
-	-- General Shortcuts
+	-- General Shortcuts --
 	awful.key({}, "Print", function()
 		awful.spawn(home .. "/.dotfiles/screenshot.sh")
 	end),
@@ -30,7 +29,7 @@ local globalkeys = gears.table.join(
 		awful.spawn("mocp -f")
 	end),
 
-	-- Awesome
+	-- Awesome --
 	awful.key({ RC.vars.modkey }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
 	awful.key({ RC.vars.modkey }, "Left", awful.tag.viewprev, { description = "view previous", group = "tag" }),
 	awful.key({ RC.vars.modkey }, "Right", awful.tag.viewnext, { description = "view next", group = "tag" }),

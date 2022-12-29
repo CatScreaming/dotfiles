@@ -4,7 +4,7 @@
 [[ $- != *i* ]] && return
 
 # Set custom prompt
-PS1="\[$(printf '\e[0;35m')\][\@] \[$(printf '\e[0;35m')\]\u\[$(printf '\e[0m')\] \[$(printf '\e[0;33m')\]\w \[$(printf '\e[0;36m')\]\$ \[$(printf '\e[0m')\]"
+PS1="\[$(printf '\e[0;35m')\][\@] \[$(printf '\e[0;35m')\]\u †\[$(printf '\e[0m')\] \[$(printf '\e[0;33m')\]\w \[$(printf '\e[0;36m')\]\$ \[$(printf '\e[0m')\]"
 
 # Better bash 
 bind 'set bell-style none'
@@ -35,7 +35,7 @@ fi
 
 enres()
 {
-	cd ~/.dotfiles/
+	cd ~/.dotfiles/ || exit 
 	tar czf res.tar.gz res/
 	gpg -c res.tar.gz
 	rm res.tar.gz
@@ -43,7 +43,7 @@ enres()
 
 deres()
 {
-	cd ~/.dotfiles/
+	cd ~/.dotfiles/ || exit
 	gpg -do res.tar.gz res.tar.gz.gpg
 	tar xvf res.tar.gz
 	rm res.tar.gz

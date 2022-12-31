@@ -9,6 +9,6 @@ export HISTSIZE=100
 export EDITOR=/usr/bin/nvim
 export VISUAL=$EDITOR
 
-[[ -f ~/.config/lf/lf_icons.sh ]] && . ~/.config/lf/lf_icons.sh
 [[ -f ~/.bashrc ]] && . ~/.bashrc
-
+[[ -f ~/.config/lf/lf_icons.sh ]] && . ~/.config/lf/lf_icons.sh
+[[ -f ~/.dotfiles/scripts/browser-sync.sh ]] && ~/.dotfiles/scripts/browser-sync.sh dhdd12om.winston-wednesday

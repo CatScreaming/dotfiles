@@ -8,7 +8,7 @@ local home = os.getenv("HOME")
 local globalkeys = gears.table.join(
 	-- General Shortcuts --
 	awful.key({}, "Print", function()
-		awful.spawn(home .. "/.dotfiles/screenshot.sh")
+		awful.spawn(home .. "/.dotfiles/scripts/screenshot.sh")
 	end),
 	awful.key({}, "XF86AudioMute", function()
 		awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")

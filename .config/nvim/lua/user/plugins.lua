@@ -1,4 +1,4 @@
---Save file to reload plugins
+-- Save file to reload plugins
 vim.cmd([[
 	augroup packer_user_config
 		autocmd!
@@ -25,7 +25,7 @@ return packer.startup(function(use)
 	use({ "nvim-lua/plenary.nvim" })
 
 	-- Colorscheme
-	use({ "catppuccin/nvim", as = "catppuccin" })
+	use({ "catppuccin/nvim", as = "catppuccin", before = "akinsho/bufferline" })
 
 	-- Completion
 	use({ "L3MON4D3/LuaSnip" })
@@ -39,13 +39,18 @@ return packer.startup(function(use)
 	use({ "williamboman/mason.nvim" })
 	use({ "williamboman/mason-lspconfig.nvim" })
 	-- Java LSP
-	use({ "mfussenegger/nvim-jdtls" })
+	use({ "mfussenegger/nvim-jdtls", ft = "java" })
 
 	-- Highlighting, formatting and linting
 	use({ "nvim-treesitter/nvim-treesitter" })
 	use({ "jose-elias-alvarez/null-ls.nvim" })
 
+	-- Coding QoL
+	use({ "windwp/nvim-autopairs" })
+	use({ "numToStr/Comment.nvim" })
+
 	-- Explorer and bufferline
+	-- use({ "lewis6991/gitsigns.nvim", tag = "release" })
 	use({ "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" } })
 	use({ "akinsho/bufferline.nvim", requires = { "nvim-tree/nvim-web-devicons" } })
 	use({ "feline-nvim/feline.nvim" })

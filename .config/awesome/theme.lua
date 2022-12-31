@@ -28,6 +28,12 @@ theme.border_normal = "#000000"
 theme.border_focus = "#535d6c"
 theme.border_marked = "#91231c"
 
+theme.color_cpu = "#ff7a00"
+theme.color_mem = "#b30000"
+theme.color_input = "#8a18eb"
+theme.color_output = "#eb79f7"
+
+
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:

@@ -7,4 +7,7 @@ bufferline.setup({
 	options = {
 		offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
 	},
+	highlights = require("catppuccin.groups.integrations.bufferline").get({
+		styles = { "italic", "bold" },
+	}),
 })

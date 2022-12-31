@@ -69,17 +69,19 @@ awful.screen.connect_for_each_screen(function(s)
 	-- Add widgets to the wibox
 	s.mywibox:setup({
 		layout = wibox.layout.align.horizontal,
-		{ -- Left widgets
+		{
 			layout = wibox.layout.fixed.horizontal,
 			awful.widget.launcher({ image = beautiful.awesome_icon, menu = RC.mainmenu }),
 			s.mytaglist,
 			s.mypromptbox,
 		},
-		s.mytasklist, -- Middle widget
-		{ -- Right widgets
+		s.mytasklist,
+		{
 			layout = wibox.layout.fixed.horizontal,
 			require("deco.widgets.cpu"),
 			require("deco.widgets.mem"),
+			require("deco.widgets.dio"),
+			set_separator(),
 			wibox.widget.systray(),
 			set_separator(),
 			wibox.widget.textclock(),

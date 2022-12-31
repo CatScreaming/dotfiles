@@ -3,4 +3,4 @@ if not feline_status then
 	return
 end
 
-feline.setup()
+feline.setup({})

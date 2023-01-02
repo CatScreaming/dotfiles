@@ -1,2 +1,5 @@
 Theme = darkdot_theme
 Keymap = keymap
+ReadTags = no
+ShowTime = no
+TagsCacheSize = 0

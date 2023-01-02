@@ -2,7 +2,6 @@ pcall(require, "luarocks.loader")
 local awful = require("awful")
 require("awful.autofocus")
 local beautiful = require("beautiful")
-local naughty = require("naughty")
 require("main.error-handling")
 
 beautiful.init("~/.config/awesome/theme.lua")
@@ -21,6 +20,8 @@ root.keys(RC.globalkeys)
 
 require("deco.menubar")
 require("deco.statusbar")
+-- TODO: Better notifications
+-- local naughty = require("naughty")
 
 -- Autostart
 awful.spawn("picom -b")

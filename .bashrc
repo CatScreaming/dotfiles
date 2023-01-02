@@ -30,21 +30,5 @@ source /usr/share/git/completion/git-completion.bash 2> /dev/null
 if [ -f "$HOME/.dotfiles/.bash-git-prompt/gitprompt.sh" ]; then
 	GIT_PROMPT_ONLY_IN_REPO=1
 	GIT_PROMPT_FETCH_REMOTE_STATUS=0
-	source $HOME/.dotfiles/.bash-git-prompt/gitprompt.sh
+	source "$HOME/.dotfiles/.bash-git-prompt/gitprompt.sh"
 fi
-
-enres()
-{
-	cd ~/.dotfiles/ || exit 
-	tar czf res.tar.gz res/
-	gpg -c res.tar.gz
-	rm res.tar.gz
-}
-
-deres()
-{
-	cd ~/.dotfiles/ || exit
-	gpg -do res.tar.gz res.tar.gz.gpg
-	tar xvf res.tar.gz
-	rm res.tar.gz
-}

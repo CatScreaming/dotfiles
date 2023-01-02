@@ -10,7 +10,7 @@ memwidget:set_background_color("#00000000")
 memwidget:set_color(beautiful.color_mem)
 
 if vicious_status then
-	vicious.register(memwidget, vicious.widgets.mem, "$1", 5)
+	vicious.register(memwidget, vicious.widgets.mem, "$1", 7)
 end
 
 return wibox.widget({

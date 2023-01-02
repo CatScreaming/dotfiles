@@ -18,8 +18,8 @@ outputwidget:set_color(beautiful.color_output)
 
 if vicious_status then
 	vicious.cache(vicious.widgets.dio)
-	vicious.register(inputwidget, vicious.widgets.dio, "${sda write_kb}", 3)
-	vicious.register(outputwidget, vicious.widgets.dio, "${sda read_kb}", 3)
+	vicious.register(inputwidget, vicious.widgets.dio, "${sda write_kb}", 5)
+	vicious.register(outputwidget, vicious.widgets.dio, "${sda read_kb}", 5)
 end
 
 return wibox.widget({

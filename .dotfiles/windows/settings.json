@@ -1,0 +1,136 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "prevTab"
+            },
+            "keys": "ctrl+shift+left"
+        },
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+tab"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+tab"
+        },
+        {
+            "command": 
+            {
+                "action": "nextTab"
+            },
+            "keys": "ctrl+shift+right"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "colorScheme": "moonfly",
+            "cursorShape": "filledBox",
+            "font": 
+            {
+                "face": "FiraCode NFM",
+                "size": 11
+            },
+            "scrollbarState": "visible",
+        },
+        "list": 
+        [
+            {
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Eingabeaufforderung"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{7f02c8fb-a464-5f89-852a-2e82d6d0f19e}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2019",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{45e3895d-fe0e-5c6c-8fb8-cba6f41555cf}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2019",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl"
+            }
+        ]
+    },
+    "schemes": 
+    [
+        {
+            "background": "#080808",
+            "black": "#323437",
+            "blue": "#80A0FF",
+            "brightBlack": "#949494",
+            "brightBlue": "#74B2FF",
+            "brightCyan": "#85DC85",
+            "brightGreen": "#36C692",
+            "brightPurple": "#AE81FF",
+            "brightRed": "#FF5189",
+            "brightWhite": "#E4E4E4",
+            "brightYellow": "#C2C292",
+            "cursorColor": "#9E9E9E",
+            "cyan": "#79DAC8",
+            "foreground": "#B2B2B2",
+            "green": "#8CC85F",
+            "name": "moonfly",
+            "purple": "#CF87E8",
+            "red": "#FF5454",
+            "selectionBackground": "#B2CEEE",
+            "white": "#C6C6C6",
+            "yellow": "#E3C78A"
+        }
+    ]
+}

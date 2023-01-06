@@ -1,0 +1,11 @@
+set shell cmd
+set scrolloff 10
+set info size
+set icons true
+
+map w $powershell
+map e $nvim %f%
+map <enter> shell
+
+map X $del /q %f%
+map . set hidden!

@@ -1,9 +1,9 @@
-set previewer ~/.config/lf/lf_kitty_preview.sh
-set cleaner ~/.config/lf/lf_kitty_clean.sh
+set info size
 set icons true
 
 map . set hidden!
 map x $gio trash "$fx"
 map X $rm -r "$fx"
-map b1 cd /home/toffee/
-map b2 cd /run/media/toffee/VAULT/
+
+set previewer ~/.config/lf/lf_kitty_preview.sh
+set cleaner ~/.config/lf/lf_kitty_clean.sh

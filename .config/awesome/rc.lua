@@ -23,5 +23,6 @@ require("deco.statusbar")
 -- TODO: Better notifications
 -- local naughty = require("naughty")
 
+
 -- Autostart
 awful.spawn("picom -b")

@@ -3,6 +3,10 @@ if not autopairs_status then
 	return
 end
 
+local rule = require("nvim-autopairs.rule")
+
 autopairs.setup({
 	check_ts = true,
 })
+
+autopairs.add_rule(rule("$", "$", { "tex", "latex", "markdown" }))

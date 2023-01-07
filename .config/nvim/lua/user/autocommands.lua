@@ -1,7 +1,7 @@
 -- Spellchecking
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "text", "tex", "markdown", "gitcommit" },
-	command = "setlocal spell",
+	command = "setlocal spell spelllang=en_us,de",
 })
 
 -- Quick closing for info buffers

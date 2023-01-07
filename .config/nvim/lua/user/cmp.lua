@@ -5,7 +5,8 @@ if not cmp_status or not snip_status then
 	return
 end
 
-require("luasnip/loaders/from_vscode").lazy_load()
+require("cmp_luasnip")
+require("luasnip.loaders.from_snipmate").lazy_load()
 
 local check_backspace = function()
 	local col = vim.fn.col(".") - 1

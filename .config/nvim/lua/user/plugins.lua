@@ -38,6 +38,7 @@ return packer.startup(function(use)
 	-- Completion
 	use({ "L3MON4D3/LuaSnip" })
 	use({ "hrsh7th/nvim-cmp" })
+	use({ "saadparwaiz1/cmp_luasnip" })
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "hrsh7th/cmp-buffer" })
 	use({ "hrsh7th/cmp-path" })
@@ -69,7 +70,6 @@ return packer.startup(function(use)
 
 	-- Coding QoL
 	use({ "lewis6991/gitsigns.nvim", disable = checkInstalled("git") })
-
 	use({ "windwp/nvim-autopairs" })
 	use({ "numToStr/Comment.nvim" })
 

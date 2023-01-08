@@ -1,7 +1,5 @@
 local k = vim.keymap.set
 local opts = { silent = true }
-
--- Set leader
 k("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 
@@ -15,14 +13,14 @@ k("n", "<C-l>", "<C-w>l", opts)
 k("n", "<S-l>", ":bnext<CR>", opts)
 k("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- Close buffer
+k("n", "<S-q>", "<cmd>bdelete!<CR>", opts)
+
 -- Resize window
 k("n", "<C-Up>", ":resize -2<CR>", opts)
 k("n", "<C-Down>", ":resize +2<CR>", opts)
 k("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 k("n", "<C-Right>", ":vertical resize +2<CR>", opts)
-
--- Close buffer
-k("n", "<S-q>", "<cmd>bdelete!<CR>", opts)
 
 -- Clear highlight
 k("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)

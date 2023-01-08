@@ -9,4 +9,9 @@ autopairs.setup({
 	check_ts = true,
 })
 
-autopairs.add_rule(rule("$", "$", { "tex", "latex", "markdown" }))
+autopairs.add_rules({
+	rule("$", "$", { "tex", "latex", "markdown" }),
+	rule('"', '"', { "markdown" }),
+	rule("{", "}", { "markdown" }),
+	rule("\\{", "\\}", { "markdown" })
+})

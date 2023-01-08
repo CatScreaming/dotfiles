@@ -100,7 +100,7 @@ theme.titlebar_maximized_button_focus_active = themes_path .. "default/titlebar/
 -- In the future awesome can randomly select an image. For now all options must be set manually.
 theme.wallpaper = function()
 	local images = { "miablue.jpg", "miachars.jpg", "miagreen.jpg", "mianana.png", "miaturquoise.jpg", "osrefuge.png" }
-	return home_dir .. "/.dotfiles/res/images/" .. images[math.random(#images)]
+	return home_dir .. "/.dotfiles/resources/images/" .. images[math.random(#images)]
 end
 
 -- You can use your own layout icons like this:

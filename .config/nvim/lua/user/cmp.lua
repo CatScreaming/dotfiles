@@ -72,7 +72,7 @@ cmp.setup({
 				Value = "",
 				Enum = "",
 				Keyword = "",
-				Snippet = "",
+				Snippet = "",
 				Color = "",
 				File = "",
 				Reference = "",
@@ -97,6 +97,15 @@ cmp.setup({
 		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
 	},
+})
+
+-- No buffer completion for word-only files
+cmp.setup.filetype({ "markdown", "text" }, {
+	sources = cmp.config.sources({
+		{ name = "nvim_lsp" },
+		{ name = "luasnip" },
+		{ name = "path" },
+	}),
 })
 
 local autopair_status, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")

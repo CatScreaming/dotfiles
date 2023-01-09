@@ -7,7 +7,7 @@ cs.setup({
 	flavour = "mocha",
 	transparent_background = true,
 	color_overrides = {
-		all = {
+		mocha = {
 			surface0 = "#828282",
 			surface1 = "#9b9b9b",
 			surface2 = "#ababab",

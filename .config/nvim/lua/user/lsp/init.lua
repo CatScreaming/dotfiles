@@ -3,7 +3,7 @@ LANGUAGES = {}
 LANGUAGES.servers = {
 	"bashls",
 	"sumneko_lua",
-	"texlab"
+	"texlab",
 }
 -- Treesitter languages to be installed - Check :TSInstallInfo
 -- FOR WINDOWS: Run nvim once in VS Dev Console after updating

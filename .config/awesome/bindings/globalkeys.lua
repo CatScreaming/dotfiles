@@ -10,6 +10,12 @@ local globalkeys = gears.table.join(
 	awful.key({}, "Print", function()
 		awful.spawn(home .. "/.dotfiles/scripts/screenshot.sh")
 	end),
+	awful.key({}, "XF86AudioLowerVolume", function()
+		awful.spawn("pulsemixer --max-volume 100 --change-volume -5", false)
+	end),
+	awful.key({}, "XF86AudioRaiseVolume", function()
+		awful.spawn("pulsemixer --max-volume 100 --change-volume +5", false)
+	end),
 	awful.key({}, "XF86AudioMute", function()
 		awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")
 	end),

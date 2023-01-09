@@ -5,5 +5,8 @@ map . set hidden!
 map x $gio trash "$fx"
 map X $rm -r "$fx"
 
+cmd mtp $gio mount -li | awk -F= '{if(index($2,"mtp") == 1)system("gio mount "$2)}'
+cmd umtp $gio mount -li | awk -F= '{if(index($2,"mtp") == 1)system("gio mount -u "$2)}'
+
 set previewer ~/.config/lf/lf_kitty_preview.sh
 set cleaner ~/.config/lf/lf_kitty_clean.sh

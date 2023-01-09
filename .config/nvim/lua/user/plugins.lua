@@ -54,6 +54,13 @@ return packer.startup(function(use)
 	use({ "nvim-treesitter/nvim-treesitter" })
 	use({ "jose-elias-alvarez/null-ls.nvim" })
 
+	-- DAP
+
+	-- Coding QoL
+	use({ "lewis6991/gitsigns.nvim", disable = checkInstalled("git") })
+	use({ "windwp/nvim-autopairs" })
+	use({ "numToStr/Comment.nvim" })
+
 	-- Previews
 	use({
 		"iamcco/markdown-preview.nvim",
@@ -65,15 +72,8 @@ return packer.startup(function(use)
 		ft = "markdown",
 	})
 
-	-- TODO: Latex preview
-	--use({ })
-
-	-- Coding QoL
-	use({ "lewis6991/gitsigns.nvim", disable = checkInstalled("git") })
-	use({ "windwp/nvim-autopairs" })
-	use({ "numToStr/Comment.nvim" })
-
 	-- Explorer and bufferline
+	-- Telescope
 	use({ "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" } })
 	use({ "akinsho/bufferline.nvim", requires = { "nvim-tree/nvim-web-devicons" } })
 	use({ "feline-nvim/feline.nvim" })

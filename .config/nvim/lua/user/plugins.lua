@@ -57,7 +57,13 @@ return packer.startup(function(use)
 	-- DAP
 
 	-- Coding QoL
-	use({ "lewis6991/gitsigns.nvim", disable = checkInstalled("git") })
+	use({
+		"lewis6991/gitsigns.nvim",
+		disable = checkInstalled("git"),
+		config = function()
+			require("user.opt.gitsigns")
+		end,
+	})
 	use({ "windwp/nvim-autopairs" })
 	use({ "numToStr/Comment.nvim" })
 

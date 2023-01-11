@@ -1,3 +1,5 @@
+OS_NAME = vim.loop.os_uname().sysname
+
 -- Vim Default
 require("user.options")
 require("user.keymap")

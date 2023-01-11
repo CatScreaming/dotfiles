@@ -1,5 +1,6 @@
 Theme = darkdot_theme
 Keymap = keymap
 ReadTags = no
+SavePlaylist = no
 ShowTime = no
 TagsCacheSize = 0

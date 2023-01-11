@@ -27,11 +27,10 @@ k("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Spawn IDE-like Terminal at the bottom
 k("n", "<leader>t", function ()
-	local os_name = vim.loop.os_uname().sysname
-	if os_name == "Linux" then
+	if OS_NAME == "Linux" then
 		vim.cmd("silent ! kitty @ --to=$KITTY_LISTEN_ON launch --type window --cwd $PWD")
 		vim.cmd("silent ! kitty @ --to=$KITTY_LISTEN_ON resize-window -a vertical -i -16")
-	elseif os_name == "Windows_NT" then
+	elseif OS_NAME == "Windows_NT" then
 		vim.cmd("silent ! wt.exe -w 0 split-pane -H -s .2")
 	end
 end, opts)

@@ -13,5 +13,6 @@ autopairs.add_rules({
 	rule("$", "$", { "tex", "latex", "markdown" }),
 	rule('"', '"', { "markdown" }),
 	rule("{", "}", { "markdown" }),
+	rule("(", ")", { "markdown" }),
 	rule("\\{", "\\}", { "markdown" })
 })

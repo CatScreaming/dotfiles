@@ -1,7 +1,6 @@
-local os_name = vim.loop.os_uname().sysname
 local config = {}
 
-if os_name == "Linux" then
+if OS_NAME == "Linux" then
 	local home = os.getenv("HOME")
 	config = {
 		cmd = {
@@ -31,7 +30,7 @@ if os_name == "Linux" then
 		},
 		root_dir = vim.fs.dirname(vim.fs.find({ ".gradlew", ".git", "mvnw" }, { upward = true })[1]),
 	}
-elseif os_name == "Windows_NT" then
+elseif OS_NAME == "Windows_NT" then
 	local home = os.getenv("UserProfile")
 	config = {
 		cmd = {

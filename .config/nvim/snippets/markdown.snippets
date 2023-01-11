@@ -2,12 +2,36 @@
 snippet tab markdown-tab
 	        
 
-# Latex snippets
-snippet implies =>
-	\\Rightarrow
+# Quick Latex snippets
+snippet txt Text
+	\\text{${1}}
 
-snippet equivalent <=>
-	\\Leftrightarrow
+snippet quad Quad
+	\\qquad
+
+snippet frac Fraction
+	\\frac{${1}}{${2}}
+
+snippet root Root
+	\\sqrt[]{${1}}
+
+snippet pow Power
+	${1}^${2}
+
+snippet sub Sub
+	${1}_${2}
+
+snippet dot ⋅
+	\\cdot
+
+snippet neq !=
+	\\neq
+
+snippet ge >=
+	\\ge
+
+snippet le <=
+	\\le
 
 snippet and && 
 	\\land
@@ -18,20 +42,49 @@ snippet or ||
 snippet not !
 	\\neg
 
+snippet implies =>
+	\\Rightarrow
+
+snippet equivalent <=>
+	\\Leftrightarrow
+
+snippet in ∈
+	\\in
+
+snippet notin ∉
+	\\notin
+
+snippet N Natural
+	\\N
+
+snippet Z Integer
+	\\Z
+
+snippet Q Rational
+	\\mathbb{Q}
+
+snippet R Real
+	\\R
+
+snippet P Prime
+	\\mathbb{P}
+
 snippet sum Summation
-	\\sum\\limits_{${1:i=0}}^{${2:n}} {$0} 
+	\\sum\\limits_{${1:i=0}}^{${2:n}} {$0}
+
+snippet pro Product
+	\\
 
 snippet lim Limit
 	\\lim_{${1:i=0}} {${2:n}} {$0}
-
-snippet pdv partial derivation
-	\\frac{\\partial {$1}}{\\partial {$2}} {$0}
-
-snippet ppdv second partial derivation
-	\\frac{\\partial^2 {$1}}{\\partial {$2} \\partial {$3}} {$0}
 
 snippet dv derivative
 	\\frac{d {$1}}{d {$2}} {$0}
 
 snippet int integral
 	\\int_{{$1}}^{{$2}} {$3} \\: d{$4} {$0}
+
+snippet @table Table
+	\\begin{array}{${1:c | c}}
+	${2}
+	\\end{array}

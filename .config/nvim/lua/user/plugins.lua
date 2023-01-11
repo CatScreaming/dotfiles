@@ -48,6 +48,7 @@ return packer.startup(function(use)
 	use({ "williamboman/mason.nvim" })
 	use({ "williamboman/mason-lspconfig.nvim" })
 	use({ "mfussenegger/nvim-jdtls", disable = checkInstalled("java"), ft = "java" })
+	use({ "scalameta/nvim-metals", disable = checkInstalled("cs") and checkInstalled("scala"), ft = "scala" })
 
 	-- Highlighting, formatting and linting
 	use({ "nvim-treesitter/nvim-treesitter" })

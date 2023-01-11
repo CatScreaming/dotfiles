@@ -4,7 +4,6 @@ if not status_cs then
 end
 
 cs.setup({
-	flavour = "mocha",
 	transparent_background = true,
 	color_overrides = {
 		mocha = {
@@ -15,4 +14,8 @@ cs.setup({
 	},
 })
 
-vim.cmd.colorscheme("catppuccin")
+if OS_NAME == "Windows_NT" then
+	vim.cmd.colorscheme("catppuccin-latte")
+else
+	vim.cmd.colorscheme("catppuccin-mocha")
+end

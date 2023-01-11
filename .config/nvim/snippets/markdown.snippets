@@ -1,17 +1,27 @@
-# Common math snippets borrowed from latex
-snippet ra rightarrow
+# Markdown
+snippet tab markdown-tab
+	        
+
+# Latex snippets
+snippet implies =>
 	\\Rightarrow
 
-snippet la leftarrow
-	\\Leftarrow
-
-snippet lra leftrightarrow
+snippet equivalent <=>
 	\\Leftrightarrow
+
+snippet and && 
+	\\land
+
+snippet or ||
+	\\lor
+
+snippet not !
+	\\neg
 
 snippet sum Summation
 	\\sum\\limits_{${1:i=0}}^{${2:n}} {$0} 
 
-snippet lim limit
+snippet lim Limit
 	\\lim_{${1:i=0}} {${2:n}} {$0}
 
 snippet pdv partial derivation
@@ -25,6 +35,3 @@ snippet dv derivative
 
 snippet int integral
 	\\int_{{$1}}^{{$2}} {$3} \\: d{$4} {$0}
-
-snippet tab markdown-tab
-	        

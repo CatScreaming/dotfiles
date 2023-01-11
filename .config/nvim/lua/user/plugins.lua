@@ -47,7 +47,6 @@ return packer.startup(function(use)
 	use({ "neovim/nvim-lspconfig" })
 	use({ "williamboman/mason.nvim" })
 	use({ "williamboman/mason-lspconfig.nvim" })
-	-- Java LSP
 	use({ "mfussenegger/nvim-jdtls", disable = checkInstalled("java"), ft = "java" })
 
 	-- Highlighting, formatting and linting
@@ -55,7 +54,7 @@ return packer.startup(function(use)
 	use({ "jose-elias-alvarez/null-ls.nvim" })
 
 	-- DAP
-
+	--
 	-- Coding QoL
 	use({
 		"lewis6991/gitsigns.nvim",
@@ -67,6 +66,12 @@ return packer.startup(function(use)
 	use({ "windwp/nvim-autopairs" })
 	use({ "numToStr/Comment.nvim" })
 
+	-- Explorer and bufferline
+	use({ "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" } })
+	use({ "akinsho/bufferline.nvim", requires = { "nvim-tree/nvim-web-devicons" } })
+	-- Telescope
+	use({ "feline-nvim/feline.nvim" })
+
 	-- Previews
 	use({
 		"iamcco/markdown-preview.nvim",
@@ -77,10 +82,4 @@ return packer.startup(function(use)
 		run = "cd app && npm install",
 		ft = "markdown",
 	})
-
-	-- Explorer and bufferline
-	-- Telescope
-	use({ "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" } })
-	use({ "akinsho/bufferline.nvim", requires = { "nvim-tree/nvim-web-devicons" } })
-	use({ "feline-nvim/feline.nvim" })
 end)

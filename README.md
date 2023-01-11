@@ -28,7 +28,7 @@ rm --recursive dotfiles-tmp
 
 ```sh
 got status
-got add .gitconfig
+got add -u 
 got commit -m 'Add gitconfig'
 got push
 ```
